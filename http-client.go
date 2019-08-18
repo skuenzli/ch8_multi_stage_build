@@ -7,7 +7,9 @@ import "io/ioutil"
 import "fmt"
 
 func main() {
-	resp, err := http.Get("https://raw.githubusercontent.com/dockerinaction/ch8_multi_stage_build/master/http-client.go")
+	url := "https://raw.githubusercontent.com/" +
+		"dockerinaction/ch8_multi_stage_build/master/http-client.go"
+	resp, err := http.Get(url)
 	if err != nil {
 		panic(err)
 	}
